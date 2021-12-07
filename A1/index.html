@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1 - Šablon za kreiranje objekata studenata</title>
+</head>
+
+<body>
+    <script>
+
+        class Student {
+
+            constructor(name, address, phone, course) {
+                this.name = name;
+                this.address = address;
+                this.phone = phone;
+                this.course = course;
+            }
+
+            getInfo() {
+                return "Ime: " + this.name + "\n" +
+                    "Adresa: " + this.address + "\n" +
+                    "Broj telefona: " + this.phone + "\n" +
+                    "Kurs: " + this.course + "\n\n";
+            }
+        }
+
+        var student1 = new Student("Pera Perić", "Vojvode Stepe 46/23", "(+381)653642198", "Programiranje 1");
+        var student2 = new Student("Zika Mihajlović", "Majevička 95", "(+381)641234567", "Matematika");
+        var student3 = new Student("Marko Marković", "Maksima Gorkog 64", "(+382)631254247", "Elektrotehnika");
+
+        console.log(student1.getInfo(), student2.getInfo(), student3.getInfo())
+        
+        /*
+        console.log(student1.getInfo());
+        console.log(student2.getInfo());
+        console.log(student3.getInfo());
+        */
+    </script>
+</body>
+
+</html>
