@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2 - Čitanje podataka o studentima</title>
+</head>
+<body>
+    <script>
+
+        class Student {
+
+            constructor(name, address, phone, course) {
+
+                this.name = name;
+                this.address = address;
+                this.phone = phone;
+                this.course = course;
+            }
+
+            getInfo() {
+                return "Name: " + this.name + "\n" +
+                    "Address: " + this.address + "\n" +
+                    "Phone: " + this.phone + "\n" +
+                    "Course: " + this.course + "\n\n";
+            }
+        }
+
+        fetch('https://v-dresevic.github.io/Advanced-JavaScript-Programming/data/students.txt')
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (data) {
+
+                const studentInfo = data.split("\n");
+
+                var student1 = new Student(studentInfo[0], studentInfo[1], studentInfo[2], studentInfo[3]);
+                var student2 = new Student(studentInfo[4], studentInfo[5], studentInfo[6], studentInfo[7]);
+                var student3 = new Student(studentInfo[8], studentInfo[9], studentInfo[10], studentInfo[11]);
+                var student4 = new Student(studentInfo[12], studentInfo[13], studentInfo[14], studentInfo[15]);
+                var student5 = new Student(studentInfo[16], studentInfo[17], studentInfo[18], studentInfo[19]);
+
+                console.log(student1.getInfo(), student2.getInfo(), student3.getInfo(), student4.getInfo(), student5.getInfo());
+
+            });
+
+    </script>
+</body>
+
+</html>
